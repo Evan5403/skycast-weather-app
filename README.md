@@ -6,9 +6,9 @@ Skycast is a modern weather dashboard built with a **Next.js + TypeScript** fron
 
 ## 📁 Project Structure
 skycast-weather-app
-  ├── back-end 
+  ├── back-end/
     │ └── weather-api/ # Laravel API (OpenWeatherMap integration) 
-  └── front-end 
+  └── front-end/
     └── weather-app/ # Next.js 14 + TypeScript UI (ShadCN + TailwindCSS + Framer Motion)
 
 ---
