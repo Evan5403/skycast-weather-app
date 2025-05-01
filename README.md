@@ -114,3 +114,4 @@ The frontend layout follows a sidebar-dashboard pattern for clean UX:
 - Forecast + metric cards adapt to screen size
 
 ![Image](https://github.com/user-attachments/assets/092b2e8b-a29b-4714-92a0-617e6c11147a)
+![Image](https://github.com/user-attachments/assets/3564d2ab-fb8e-4fae-9fbd-eb4d285c530e)
