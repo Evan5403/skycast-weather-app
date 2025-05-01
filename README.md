@@ -36,62 +36,80 @@ skycast-weather-app/
 ```bash
 git clone https://github.com/your-username/skycast-weather-app.git
 cd skycast-weather-app
+```
+### 2. Backend (Laravel API)
+```bash
+cd back-end/weather-api
 
-📸 UI Features
-Your app follows a clean and intuitive layout based on a wireframe-driven design. Key UI components include:
+# Install dependencies
+composer install
 
-🧭 Sidebar (Left)
-Current Weather Icon – dynamically changes based on live data
+# Copy .env and configure your API key
+cp .env.example .env
+php artisan key:generate
 
-Current Temperature – displayed prominently with °C or °F symbol
+# Set OpenWeatherMap API key in .env
+OPENWEATHER_API_KEY=your_api_key_here
 
-Weather Description – e.g., “few clouds”, “light rain”
+# Start Laravel server
+php artisan serve
 
-Current Date & City Name – displayed at the bottom of the sidebar
+```
+Backend will run at: http://localhost:8000
 
-🔎 Top Navigation (Main)
-Search Input – enter any city to view its weather
+### 3. Frontend (Next.js App)
+```bash
+cd ../../front-end/weather-app
 
-Search Button – activates fetch via Laravel API
+# Install dependencies
+npm install
 
-Unit Toggle – switch between Celsius (°C) and Fahrenheit (°F)
+# Start development server
+npm run dev
 
-📅 Forecast Section
-3-Day Forecast Cards – each card includes:
+```
+Frontend runs at: http://localhost:3000
 
-Date (e.g., "Wed")
 
-Weather Icon
+## 📸 UI Features
 
-Min/Max Temperature
+The frontend layout follows a sidebar-dashboard pattern for clean UX:
 
-Weather Summary
+### 🧭 Sidebar (Left)
+- Shows current weather:
+  - Weather icon
+  - Temperature (°C/°F)
+  - Weather description
+  - City name and current date
 
-🌬️ Weather Metrics
-Wind Card
+### 🔎 Top Navigation (Main)
+- **SearchBar** with city input and search button
+- **Unit toggle switch** to change between Celsius (°C) and Fahrenheit (°F)
 
-Shows wind speed (in m/s or mph depending on unit)
+### 📅 Forecast Section
+- Displays 3-day forecast cards
+  - Date (e.g., "Wed")
+  - Weather icon
+  - Min/Max temperatures
+  - Description
 
-Compass icon rotates based on wind direction
+### 🌬️ Weather Metrics
+- **Wind Card**
+  - Displays wind speed (in m/s or mph based on unit)
+  - Compass icon rotates to indicate wind direction
 
-Humidity Card
+- **Humidity Card**
+  - Displays current humidity %
+  - Visual progress bar fills based on value
 
-Percentage display
+### ✨ Animations (Framer Motion)
+- Smooth fade-in on page load
+- Slide + scale transitions for weather cards
+- Compass icon and humidity bar animate on unit/city change
 
-Visual progress bar that animates on value change
+### 📱 Responsive Design
+- Mobile-first layout
+- Sidebar stacks on small screens
+- Forecast + metric cards adapt to screen size
 
-✨ Animations
-Framer Motion animations:
-
-Page load fade-in
-
-Re-renders when city or unit changes
-
-Humidity bar and compass icon smoothly animate on change
-
-📱 Responsive Design
-Mobile-first layout
-
-Sidebar collapses gracefully
-
-Cards stack vertically on smaller screens
+![Image](https://github.com/user-attachments/assets/092b2e8b-a29b-4714-92a0-617e6c11147a)
