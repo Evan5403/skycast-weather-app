@@ -19,6 +19,7 @@ skycast-weather-app
 - [Next.js](https://nextjs.org/) (App Router, TypeScript)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
+- [rippleui](https://ui.rippleui.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - Fetch API (AJAX) for backend communication
 
@@ -34,7 +35,7 @@ skycast-weather-app
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/skycast-weather-app.git
+git clone https://github.com/Evan5403/skycast-weather-app.git
 cd skycast-weather-app
 ```
 ### 2. Backend (Laravel API)
@@ -49,7 +50,7 @@ cp .env.example .env
 php artisan key:generate
 
 # Set OpenWeatherMap API key in .env
-OPENWEATHER_API_KEY=your_api_key_here
+OPENWEATHERMAP_API_KEY=your_api_key_here
 
 # Start Laravel server
 php artisan serve
