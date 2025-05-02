@@ -40,19 +40,26 @@ class WeatherController extends Controller
 
             $forecastData = json_decode($forecastResponse->getBody()->getContents(), true);
 
-            // Group forecast by date
             $groupedForecast = [];
 
+            $today = date('Y-m-d');
             foreach ($forecastData['list'] as $entry) {
                 $date = date('Y-m-d', strtotime($entry['dt_txt']));
+                
+                if ($date <= $today) {
+                    continue; // Skip today
+                }
+
                 if (!isset($groupedForecast[$date])) {
                     $groupedForecast[$date] = [];
                 }
+
                 $groupedForecast[$date][] = $entry;
             }
 
-            // Reduce to 3 days
-            $threeDayForecast = array_slice($groupedForecast, 0, 3);
+            // Get the next 3 days starting from tomorrow
+            $threeDayForecast = array_slice($groupedForecast, 0, 3, true);
+
 
             return response()->json([
                 'city' => $city,
