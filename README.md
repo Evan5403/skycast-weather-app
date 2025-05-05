@@ -56,7 +56,7 @@ OPENWEATHERMAP_API_KEY=your_api_key_here
 php artisan serve
 
 ```
-Backend will run at: http://localhost:8000
+Backend will run at: http://localhost:8000/api/weather
 
 ### 3. Frontend (Next.js App)
 ```bash
